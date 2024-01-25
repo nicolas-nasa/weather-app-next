@@ -35,7 +35,26 @@ export default function Home() {
     }
   }
 
+  const setDefaultWeather = async () => {
+    {
+      const today = await fetch(
+        `https://api.weatherapi.com/v1/current.json?q=rio de janeiro&key=33ef601950bb46f19b100859242401`
+      )
+      const week = await fetch(
+        `https://api.weatherapi.com/v1/forecast.json?key=33ef601950bb46f19b100859242401&q=rio de janeiro&days=7`
+      )
+      const todayFormated: IToday = await today.json()
+      if (todayFormated.current) setTodayWeather(todayFormated)
+      const weekFormated: IWeekWeather = await week.json()
+      if (weekFormated.forecast.forecastday.length > 0) {
+        weekFormated.forecast.forecastday.shift()
+        setWeekWeather(weekFormated.forecast.forecastday)
+      }
+    }
+  }
+
   useEffect(() => {
+    setDefaultWeather()
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(async position => {
         setPosition({
@@ -44,24 +63,16 @@ export default function Home() {
         })
         if (actuaPosition) {
           await setWhether(actuaPosition)
-        } else {
-          const today = await fetch(
-            `https://api.weatherapi.com/v1/current.json?q=sao paulo&key=33ef601950bb46f19b100859242401`
-          )
-          const week = await fetch(
-            `https://api.weatherapi.com/v1/forecast.json?key=33ef601950bb46f19b100859242401&q=sao paulo&days=7`
-          )
-          const todayFormated: IToday = await today.json()
-          if (todayFormated.current) setTodayWeather(todayFormated)
-          const weekFormated: IWeekWeather = await week.json()
-          if (weekFormated.forecast.forecastday.length > 0) {
-            weekFormated.forecast.forecastday.shift()
-            setWeekWeather(weekFormated.forecast.forecastday)
-          }
         }
       })
     }
   }, [])
+
+  useEffect(() => {
+    if (actuaPosition) {
+      setWhether(actuaPosition)
+    }
+  }, [actuaPosition])
 
   const onSelectionChange = async (key: React.Key) => {
     const week = await fetch(
