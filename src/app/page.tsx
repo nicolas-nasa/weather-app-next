@@ -1,3 +1,5 @@
+'use client'
+
 import SearchInput from '@/components/molecules/search'
 import Header from '@/components/organisms/header'
 import WeatherCard, { IToday } from '@/components/organisms/weatherCard'
@@ -16,8 +18,6 @@ export default function Home() {
     latitude: number
     longitude: number
   }>()
-
-  const setChangeBetweenTemperature = () => {}
 
   const setWhether = async (pos: { latitude: number; longitude: number }) => {
     const today = await fetch(
