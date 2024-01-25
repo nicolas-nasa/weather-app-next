@@ -50,23 +50,23 @@ Finilly open [http://localhost:3000](http://localhost:3000) with your browser to
 
 ## Features
 
-[x] Integrate with public weather API
-[x] Display informations (temperature, description, humidity, windspeed)
-[x] User Friendly interface with proper Styling
-[x] Search funcionality (put city name and retrive weather)
-[x] Used search funcionality to block search erros (select input)
-[] Loading indicators
-[] Tests
-[x] Switch bottom between celsius and fahrenheit
-[x] Deploy
-[x] Typescript
-[x] DockerFile
-[] abstract fetch and functions
-[] secured sensitive information ( api key )
-[] create interface and types files separately
-[] create a providers
-[] create a swith between kpm and mph
-[x] Responsive application ( fits well in all devices )
-[x] Show weather for upcoming days
-[x] Theme Dark and light
-[x] Get weather with current location
+- [x] Integrate with public weather API
+- [x] Display informations (temperature, description, humidity, windspeed)
+- [x] User Friendly interface with proper Styling
+- [x] Search funcionality (put city name and retrive weather)
+- [x] Used search funcionality to block search erros (select input)
+- [] Loading indicators
+- [] Tests
+- [x] Switch bottom between celsius and fahrenheit
+- [x] Deploy
+- [x] Typescript
+- [x] DockerFile
+- [] abstract fetch and functions
+- [] secured sensitive information ( api key )
+- [] create interface and types files separately
+- [] create a providers
+- [] create a swith between kpm and mph
+- [x] Responsive application ( fits well in all devices )
+- [x] Show weather for upcoming days
+- [x] Theme Dark and light
+- [x] Get weather with current location
