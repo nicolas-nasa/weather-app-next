@@ -61,7 +61,7 @@ export default function Home() {
         }
       })
     }
-  }, [actuaPosition])
+  }, [])
 
   const onSelectionChange = async (key: React.Key) => {
     const week = await fetch(
