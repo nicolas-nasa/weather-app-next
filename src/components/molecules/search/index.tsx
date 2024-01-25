@@ -22,7 +22,7 @@ export default function SearchInput({
   const [value, setValue] = React.useState<Iitens[]>()
   const onInputChange = async (value: string) => {
     const res = await fetch(
-      `http://api.weatherapi.com/v1/search.json?key=33ef601950bb46f19b100859242401&q=${value}&aqi=no`,
+      `https://api.weatherapi.com/v1/search.json?key=33ef601950bb46f19b100859242401&q=${value}&aqi=no`,
       { cache: 'no-store' }
     )
     const json: Iitens[] = await res.json()

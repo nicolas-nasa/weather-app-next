@@ -24,7 +24,7 @@ export default function Home() {
       `https://api.weatherapi.com/v1/current.json?q=${pos.latitude},${pos.longitude}&key=33ef601950bb46f19b100859242401`
     )
     const week = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=33ef601950bb46f19b100859242401&q=${pos.latitude},${pos.longitude}&&days=7`
+      `https://api.weatherapi.com/v1/forecast.json?key=33ef601950bb46f19b100859242401&q=${pos.latitude},${pos.longitude}&&days=7`
     )
     const todayFormated: IToday = await today.json()
     if (todayFormated.current) setTodayWeather(todayFormated)
@@ -49,7 +49,7 @@ export default function Home() {
             `https://api.weatherapi.com/v1/current.json?q=sao paulo&key=33ef601950bb46f19b100859242401`
           )
           const week = await fetch(
-            `http://api.weatherapi.com/v1/forecast.json?key=33ef601950bb46f19b100859242401&q=sao paulo&days=7`
+            `https://api.weatherapi.com/v1/forecast.json?key=33ef601950bb46f19b100859242401&q=sao paulo&days=7`
           )
           const todayFormated: IToday = await today.json()
           if (todayFormated.current) setTodayWeather(todayFormated)
@@ -65,7 +65,7 @@ export default function Home() {
 
   const onSelectionChange = async (key: React.Key) => {
     const week = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=33ef601950bb46f19b100859242401&q=${key}&days=7`
+      `https://api.weatherapi.com/v1/forecast.json?key=33ef601950bb46f19b100859242401&q=${key}&days=7`
     )
     const today = await fetch(
       `https://api.weatherapi.com/v1/current.json?q=${key}&key=33ef601950bb46f19b100859242401`
